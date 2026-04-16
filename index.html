@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Fira+Code:wght@300..700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+    <style type="text/tailwindcss">
+      @import "tailwindcss";
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --color-primary: var(--primary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-secondary: var(--secondary);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-tertiary: var(--tertiary);
+        --color-muted: var(--muted);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-accent: var(--accent);
+        --color-destructive: var(--destructive);
+        --color-card: var(--card);
+        --color-card-foreground: var(--card-foreground);
+        --color-border: var(--border);
+        --color-input: var(--input);
+        --color-ring: var(--ring);
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --font-family-sans: var(--font-sans);
+        --font-family-heading: var(--font-heading);
+      }
+      :root { --secondary: #ff416c;
+        --background: #0f0f0f;
+        --primary: #ff4b2b; }
+    </style>
+  </head>
+  <body>
+<div class="min-h-screen w-full bg-background text-foreground font-sans flex flex-col relative overflow-x-hidden scroll-smooth">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Navigation -->
+  <header class="sticky top-0 z-50 w-full px-6 py-4 flex items-center justify-between backdrop-blur-xl bg-background/80 border-b border-zinc-800 transition-all duration-300">
+    <div class="flex items-center gap-2">
+      <div class="w-16 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+        <img src="https://uxmagic.blob.core.windows.net/public/agent-images/nw-logo-1776307558178-785r08n05xv.png" alt="NW Logo" class="h-full object-contain">
+      </div>
+      <span class="text-xl font-heading font-bold tracking-tight text-white">Nagendra <span class="text-primary">Websites</span></span>
+    </div>
+    <nav class="hidden md:flex items-center gap-8 text-zinc-300">
+      <a href="#services" class="text-sm font-medium hover:text-primary transition-colors">Services</a>
+      <a href="#portfolio" class="text-sm font-medium hover:text-primary transition-colors">Portfolio</a>
+      <a href="#pricing" class="text-sm font-medium hover:text-primary transition-colors">Pricing</a>
+    </nav>
+    <a href="#book-slot" class="px-6 py-2.5 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-semibold flex items-center justify-center gap-2 hover:scale-105 hover:brightness-110 transition-all shadow-lg shadow-primary/30">
+      Book Slot
+    </a>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative w-full py-20 lg:py-32 px-6 overflow-hidden bg-background">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-zinc-900/40 via-background to-background z-10"></div>
+      <div class="absolute inset-0 bg-primary/5 blur-3xl rounded-full -top-1/2 -left-1/4 w-full h-full"></div>
+      <div class="absolute inset-0 bg-secondary/5 blur-3xl rounded-full -bottom-1/2 -right-1/4 w-full h-full"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-5xl mx-auto text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-bold uppercase tracking-widest mb-6 animate-bounce">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+        Fast and Quick Delivery
+      </div>
+      <h1 class="text-5xl md:text-7xl font-heading font-black mb-6 leading-[1.1] tracking-tight text-white">
+        Get Your Business <span class="bg-gradient-to-r from-primary via-secondary to-amber-500 bg-clip-text text-transparent">Website Fast & Quick</span> 🚀
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 max-w-2xl mx-auto mb-10">
+        Attract more customers with a modern, mobile-friendly website. We build high-converting landing pages for restaurants, gyms, clinics, and shops with full backend support.
+      </p>
+      
+      <div class="flex flex-col items-center gap-4">
+        <a href="#book-slot" class="group relative px-10 py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-xl font-bold shadow-2xl shadow-primary/40 hover:scale-105 hover:brightness-110 transition-all flex items-center gap-3 active:scale-95">
+          Get Started Now
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 group-hover:translate-x-1 transition-transform"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
+        <p class="text-sm text-zinc-400 flex items-center gap-2">
+          <span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          Available for new projects
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="w-full py-24 px-6 bg-background relative">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4 text-white">Our Services in All Sectors</h2>
+        <div class="h-1.5 w-24 bg-gradient-to-r from-primary to-secondary mx-auto rounded-full"></div>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="group p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-primary/50 transition-all hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-primary/10 text-white">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Restaurant Websites</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Digital menus, table bookings, and mouth-watering galleries to drive diners to your door.</p>
+        </div>
+        <div class="group p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-secondary/50 transition-all hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-secondary/10 text-white">
+          <div class="w-14 h-14 rounded-xl bg-secondary/10 flex items-center justify-center mb-6 group-hover:bg-secondary group-hover:text-white transition-all duration-500 text-secondary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M14.4 14.4 9.6 9.6"/><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"/><path d="m21.5 21.5-1.4-1.4"/><path d="M3.9 3.9 2.5 2.5"/><path d="M6.404 2.757a2 2 0 1 0-2.829 2.828l1.768-1.767a2 2 0 1 0 2.829 2.828L1.808 13.01a2 2 0 1 0-2.829-2.829l1.767-1.768a2 2 0 1 0 2.829 2.829z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Gym & Fitness</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Membership sign-ups, class schedules, and trainer profiles designed for high conversion.</p>
+        </div>
+        <div class="group p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-amber-500/50 transition-all hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-amber-500/10 text-white">
+          <div class="w-14 h-14 rounded-xl bg-amber-500/10 flex items-center justify-center mb-6 group-hover:bg-amber-500 group-hover:text-white transition-all duration-500 text-amber-500">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v2c0 1.1.9 2 2 2h5v5c0 1.1.9 2 2 2h2a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-2a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-2z"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Clinic & Healthcare</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Professional doctor profiles, appointment requests, and service lists that build trust.</p>
+        </div>
+        <div class="group p-8 rounded-2xl bg-zinc-900 border border-zinc-800 hover:border-primary/50 transition-all hover:translate-y-[-8px] hover:shadow-2xl hover:shadow-primary/10 text-white">
+          <div class="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500 text-primary">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Local Shop Websites</h3>
+          <p class="text-zinc-400 text-sm leading-relaxed">Catalog displays, store locations, and direct WhatsApp ordering for small businesses.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="w-full py-24 px-6 bg-zinc-900/50 text-white border-y border-zinc-800/50">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-4xl font-heading font-bold mb-6">Why Business Owners <br><span class="text-primary">Trust Us</span></h2>
+        <p class="text-zinc-400 mb-8 text-lg">We don't just build websites; we build growth engines. Every site is optimized for speed and results.</p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-amber-500"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Mobile Friendly</h4>
+              <p class="text-sm text-zinc-400">Perfect on every screen size.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Quick Delivery</h4>
+              <p class="text-sm text-zinc-400">Go live while others are planning.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-secondary"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Backend Support</h4>
+              <p class="text-sm text-zinc-400">Email alerts & payment tools.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-amber-500"><circle cx="13.5" cy="6.5" r=".5" fill="currentColor"/><circle cx="17.5" cy="10.5" r=".5" fill="currentColor"/><circle cx="8.5" cy="7.5" r=".5" fill="currentColor"/><circle cx="6.5" cy="12.5" r=".5" fill="currentColor"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Modern UI Design</h4>
+              <p class="text-sm text-zinc-400">Premium glassmorphic aesthetic.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Long Time Support</h4>
+              <p class="text-sm text-zinc-400">Ongoing maintenance & help.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4 p-4 rounded-xl hover:bg-zinc-800 transition-colors">
+            <div class="mt-1">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-secondary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+            </div>
+            <div>
+              <h4 class="font-bold">Full E2E Testing</h4>
+              <p class="text-sm text-zinc-400">Bug-free performance guaranteed.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="relative group">
+        <div class="absolute -inset-2 bg-gradient-to-r from-primary to-secondary rounded-[2rem] blur opacity-20 group-hover:opacity-40 transition duration-1000"></div>
+        <div class="relative aspect-video bg-zinc-900 rounded-3xl border border-zinc-800 p-8 overflow-hidden flex flex-col items-center justify-center text-center shadow-2xl">
+           <div class="w-20 h-20 rounded-full bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-500">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-10 h-10 text-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+           </div>
+           <h3 class="text-2xl font-bold mb-2">Secure & Professional</h3>
+           <p class="text-zinc-400 max-w-xs">We handle the technical heavy lifting so you can focus on running your business.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / After -->
+  <section id="portfolio" class="w-full py-24 px-6 bg-background text-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-heading font-bold mb-4 italic">The "Nagendra" Difference</h2>
+        <p class="text-zinc-400">See how we transform simple chats into professional business assets.</p>
+      </div>
+      
+      <div class="flex flex-col md:flex-row gap-12 items-center">
+        <div class="flex-1 w-full group">
+          <div class="flex flex-col gap-6 items-center">
+            <div class="w-full aspect-square md:aspect-[4/3] bg-zinc-900/50 rounded-[2.5rem] border-2 border-dashed border-zinc-800 flex flex-col items-center justify-center gap-6 p-12 group-hover:border-primary/50 transition-all duration-500">
+              <div class="w-32 h-32 bg-green-500 rounded-full flex items-center justify-center shadow-2xl shadow-green-500/20 group-hover:scale-110 transition-transform duration-500">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-16 h-16"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>
+              </div>
+              <div class="text-center">
+                <h4 class="text-xl font-bold mb-2 text-white">WhatsApp Only</h4>
+                <p class="text-sm text-zinc-400">Manual replies, lost leads, and no professional presence.</p>
+              </div>
+            </div>
+            <span class="px-6 py-2 bg-zinc-800 text-zinc-300 rounded-full text-sm font-black tracking-widest uppercase">Before</span>
+          </div>
+        </div>
+        
+        <div class="flex items-center justify-center">
+          <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary hidden md:block animate-pulse"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-6 h-6 text-primary md:hidden animate-pulse"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+          </div>
+        </div>
+        
+        <div class="flex-1 w-full group">
+          <div class="flex flex-col gap-6 items-center">
+            <div class="w-full aspect-square md:aspect-[4/3] relative rounded-[2.5rem] overflow-hidden border border-primary/30 shadow-2xl shadow-primary/20 group-hover:scale-[1.02] transition-transform duration-500 bg-zinc-900">
+              <img src="https://uxmagic.blob.core.windows.net/public/agent-images/multi-device-mockup-1776309958580-pnm8p0wkelb.png" alt="Responsive Website on Desktop, Laptop, and Mobile" class="w-full h-full object-cover">
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950/90 via-zinc-950/40 to-transparent flex items-end p-8">
+                <div class="w-full">
+                  <div class="h-1 w-12 bg-primary rounded-full mb-3"></div>
+                  <h4 class="text-xl font-bold text-white">Full Business Website</h4>
+                  <p class="text-sm text-zinc-300">Automated, professional, and high-converting.</p>
+                </div>
+              </div>
+            </div>
+            <span class="px-6 py-2 bg-gradient-to-r from-primary to-secondary text-white rounded-full text-sm font-black tracking-widest shadow-lg shadow-primary/20 uppercase">After</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="w-full py-24 px-6 bg-zinc-900/30 text-white border-t border-zinc-800/50">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-heading font-bold mb-4">Simple, Scalable Options</h2>
+        <p class="text-zinc-400">Pick the perfect fit for your business growth.</p>
+      </div>
+      
+      <div class="relative group max-w-md mx-auto">
+        <div class="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-amber-500 rounded-3xl blur opacity-25 group-hover:opacity-60 transition duration-1000"></div>
+        <div class="relative p-10 bg-zinc-900 border border-zinc-800 rounded-3xl flex flex-col items-center text-center shadow-2xl">
+          <span class="px-3 py-1 bg-primary/10 text-primary border border-primary/20 rounded-full text-[10px] font-bold uppercase tracking-widest mb-6">Most Popular</span>
+          <h3 class="text-3xl font-black mb-6">Modern Website</h3>
+          
+          <div class="w-full h-px bg-gradient-to-r from-transparent via-zinc-700 to-transparent mb-8"></div>
+          
+          <ul class="w-full space-y-5 mb-10 text-left">
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">1 Page or Multiple Pages</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Fast and Quick Delivery</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Email Confirmations Support</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Online Payments Integrated</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Full Backend Functionality</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Deliver website after full testing live</span>
+            </li>
+            <li class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-5 h-5 text-primary"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+              <span class="font-bold text-zinc-200">Will provide long term support</span>
+            </li>
+          </ul>
+          
+          <a href="#book-slot" class="w-full py-5 bg-gradient-to-r from-primary to-secondary text-white rounded-2xl font-black text-lg hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.02] transition-all flex items-center justify-center gap-3">
+            Book Your Slot
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Book Slot Form Section -->
+  <section id="book-slot" class="w-full py-24 px-6 relative overflow-hidden bg-background flex flex-col items-center justify-center min-h-[800px] border-t border-zinc-800/50">
+    <div class="absolute inset-0 z-0">
+      <div class="absolute inset-0 bg-gradient-to-b from-background via-zinc-950 to-background z-10"></div>
+      <div class="absolute inset-0 bg-primary/10 blur-3xl rounded-full -top-1/4 -left-1/4 w-full h-full"></div>
+      <div class="absolute inset-0 bg-secondary/10 blur-3xl rounded-full -bottom-1/4 -right-1/4 w-full h-full"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-lg w-full">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-heading font-black mb-4 text-white">Book Your Website Slot 🚀</h2>
+        <p class="text-zinc-400">Fill the form below and we’ll contact you within minutes</p>
+      </div>
+
+      <!-- The Form Card -->
+      <div class="w-full backdrop-blur-2xl bg-zinc-900/60 border border-zinc-800 rounded-2xl p-8 shadow-2xl shadow-primary/10 hover:shadow-primary/20 transition-all duration-500 hover:-translate-y-1">
+        <form id="leadForm" class="flex flex-col gap-5">
+
+            <!-- Business Name -->
+            <input 
+              type="text" 
+              name="name"
+              placeholder="Enter your business name"
+              required
+              minlength="3"
+              pattern="^[A-Za-z0-9 ]+$"
+              class="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white"
+            >
+
+            <!-- Location -->
+            <input 
+              type="text" 
+              name="location"
+              placeholder="Enter your location"
+              required
+              minlength="3"
+              class="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white"
+            >
+
+            <!-- Mobile -->
+            <input 
+              type="tel"
+              name="mobile"
+              placeholder="Enter 10 digit mobile number"
+              required
+              maxlength="10"
+              inputmode="numeric"
+              pattern="[0-9]{10}"
+              class="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white"
+            >
+
+            <!-- Email -->
+            <input 
+              type="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+              class="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white"           >
+
+            <!-- Business Type -->
+            <select 
+              name="businessType" 
+              required
+              class="w-full px-4 py-3 bg-zinc-900 border border-zinc-700 rounded-xl text-white"           >
+              <option value="">Select Business Type</option>
+              <option value="Restaurant">Restaurant</option>
+              <option value="Gym">Gym</option>
+              <option value="Clinic">Clinic</option>
+              <option value="Shop">Shop</option>
+              <option value="Other">Other</option>
+            </select>
+        
+          <button id="submitBtn" type="submit"
+            class="bg-gradient-to-r from-green-500 to-emerald-600 py-3 rounded-xl text-white font-bold 
+            transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-green-500/40 active:scale-95
+            flex items-center justify-center gap-2 cursor-pointer">
+
+            <span id="btnText">Get My Website 🚀</span>
+
+            <!-- Loader -->
+            <svg id="loader" class="hidden animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z"></path>
+            </svg>
+
+        </button>
+        
+        </form>
+        <div id="popup" class="fixed top-5 right-5 bg-zinc-900 text-white px-6 py-4 rounded-xl shadow-lg border border-zinc-700 hidden transition-all duration-300">
+            <span id="popupText"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full py-12 px-6 bg-background text-zinc-400 border-t border-zinc-800">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="flex flex-col items-center md:items-start gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-12 h-8 rounded flex items-center justify-center overflow-hidden">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/nw-logo-1776307558178-785r08n05xv.png" alt="NW Logo" class="h-full object-contain">
+          </div>
+          <span class="text-lg font-heading font-bold text-white">Nagendra <span class="text-primary">Websites</span></span>
+        </div>
+        <p class="text-xs">We build modern websites that grow your business 🚀</p>
+      </div>
+      <p class="text-xs">© 2024 Nagendra Websites. All rights reserved.</p>
+    </div>
+  </footer>
+</div>
+
+<script>
+
+// =====================
+// ✅ SMOOTH SCROLL NAVBAR
+// =====================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const targetId = this.getAttribute("href");
+    const target = document.querySelector(targetId);
+
+    if (!target) return;
+
+    window.scrollTo({
+      top: target.offsetTop - 80, // adjust for sticky navbar
+      behavior: "smooth"
+    });
+  });
+});
+
+
+// =====================
+// ✅ FORM + ELEMENTS
+// =====================
+const form = document.getElementById("leadForm");
+const mobileInput = form.mobile;
+const btn = document.getElementById("submitBtn");
+const btnText = document.getElementById("btnText");
+const loader = document.getElementById("loader");
+const popup = document.getElementById("popup");
+const popupText = document.getElementById("popupText");
+
+
+// =====================
+// ✅ MOBILE INPUT RESTRICTION (ONLY NUMBERS)
+// =====================
+mobileInput.addEventListener("input", function() {
+  this.value = this.value.replace(/[^0-9]/g, '');
+
+  if (this.value.length > 10) {
+    this.value = this.value.slice(0, 10);
+  }
+});
+
+
+// =====================
+// ✅ PREMIUM POPUP FUNCTION
+// =====================
+function showPopup(message, type = "success") {
+  popupText.innerText = message;
+
+  // Reset colors
+  popup.classList.remove("bg-green-600", "bg-red-600");
+
+  if (type === "success") {
+    popup.classList.add("bg-green-600");
+  } else {
+    popup.classList.add("bg-red-600");
+  }
+
+  popup.classList.remove("hidden");
+
+  // Auto hide
+  setTimeout(() => {
+    popup.classList.add("hidden");
+  }, 3000);
+}
+
+
+// =====================
+// ✅ FORM SUBMIT
+// =====================
+form.addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const data = {
+    name: form.name.value.trim(),
+    location: form.location.value.trim(),
+    mobile: form.mobile.value.trim(),
+    email: form.email.value.trim(),
+    businessType: form.businessType.value
+  };
+
+  // =====================
+  // ❌ VALIDATIONS
+  // =====================
+  if (data.name.length < 3) {
+    showPopup("Enter valid business name", "error");
+    return;
+  }
+
+  if (data.location.length < 3) {
+    showPopup("Enter valid location", "error");
+    return;
+  }
+
+  if (!/^[0-9]{10}$/.test(data.mobile)) {
+    showPopup("Mobile must be exactly 10 digits", "error");
+    return;
+  }
+
+  if (!data.email.includes("@") || !data.email.includes(".")) {
+    showPopup("Enter valid email", "error");
+    return;
+  }
+
+  if (!data.businessType) {
+    showPopup("Select business type", "error");
+    return;
+  }
+
+
+  // =====================
+  // 🔄 LOADING STATE
+  // =====================
+  btnText.innerText = "Sending...";
+  loader.classList.remove("hidden");
+  btn.disabled = true;
+
+
+  try {
+    const res = await fetch("http://localhost:8080/api/leads", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(data)
+    });
+
+    if (res.ok) {
+      showPopup("✅ Request sent successfully!", "success");
+      form.reset();
+    } else {
+      showPopup("❌ Submission failed", "error");
+    }
+
+  } catch (err) {
+    console.error(err);
+    showPopup("⚠️ Backend not running", "error");
+  }
+
+
+  // =====================
+  // 🔁 RESET BUTTON STATE
+  // =====================
+  btnText.innerText = "Get My Website 🚀";
+  loader.classList.add("hidden");
+  btn.disabled = false;
+});
+
+</script>
+
+</body></html>
