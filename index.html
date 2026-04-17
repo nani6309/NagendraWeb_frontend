@@ -686,8 +686,6 @@ form.addEventListener("submit", async function(e) {
     if (res.ok) {
     showPopup("✅ Request sent successfully!", "success");
     form.reset();
-    // Open WhatsApp automatically
-    window.open(`https://wa.me/917095880269?text=Hi, I just submitted a request for website`, "_blank");
     } else {
       showPopup("❌ Submission failed", "error");
     }
