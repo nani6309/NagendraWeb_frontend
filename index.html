@@ -826,10 +826,9 @@ form.addEventListener("submit", async function (e) {
   loader.classList.remove("hidden");
   btn.disabled = true;
 
-  let dbSaved   = false;
-  let emailSent = false;
+  let dbSaved = false;
 
-  // ── Step 1: Save to database via Render backend ──
+  // ── Save to database (backend auto-sends confirmation emails) ──
   try {
     const res = await fetchWithRetry(
       `${BACKEND_URL}/api/leads`,
@@ -843,36 +842,10 @@ form.addEventListener("submit", async function (e) {
     setServerStatus("offline");
   }
 
-  // ── Step 2: Send confirmation emails via EmailJS ──
-  // Emails send even if backend had issues, as long as EmailJS is configured
-  if (EMAILJS_PUBLIC_KEY !== "5vI4yRb160ft_nXYu") {
-    try {
-      const { clientOk, adminOk } = await sendEmails(data);
-      emailSent = clientOk; // at minimum the client got their email
-      if (clientOk && adminOk) {
-        console.log("✅ Both emails sent successfully");
-      } else if (clientOk) {
-        console.warn("⚠️ Client email sent, admin email failed");
-      } else if (adminOk) {
-        console.warn("⚠️ Admin email sent, client email failed");
-      }
-    } catch (err) {
-      console.error("EmailJS error:", err);
-    }
-  } else {
-    // EmailJS not configured yet — remind in console
-    console.warn("⚠️ EmailJS not configured. Fill in EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_CLIENT_TPL, EMAILJS_ADMIN_TPL in the script to enable emails.");
-  }
-
-  // ── Step 3: Show result ──
-  if (dbSaved && emailSent) {
+  // ── Show result ──
+  if (dbSaved) {
     showPopup("✅ Booking confirmed! Check your email for confirmation.", "success");
     form.reset();
-  } else if (dbSaved && !emailSent) {
-    showPopup("✅ Request received! (Email service setup needed — contact us on WhatsApp)", "success");
-    form.reset();
-  } else if (!dbSaved && emailSent) {
-    showPopup("📧 Email sent! But server had an issue — please WhatsApp us too.", "info");
   } else {
     showPopup("⚠️ Could not reach server. Please contact us on WhatsApp.", "error");
   }
