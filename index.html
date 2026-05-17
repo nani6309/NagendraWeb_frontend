@@ -704,7 +704,8 @@ function setServerStatus(state) {
   const maxAttempts = 5;
   async function ping() {
     try {
-      await fetch(`${BACKEND_URL}/api/health`, { method: "GET", mode: "no-cors", signal: AbortSignal.timeout(15000) });
+      const r = await fetch(`${BACKEND_URL}/api/health`, { signal: AbortSignal.timeout(15000) });
+      if (!r.ok) throw new Error("not ready");
       setServerStatus("ready");
     } catch {
       attempts++;
@@ -714,6 +715,9 @@ function setServerStatus(state) {
   }
   ping();
 })();
+
+// Keep server warm — ping every 4 min to prevent Render free-tier sleep
+setInterval(() => { fetch(`${BACKEND_URL}/api/health`).catch(() => {}); }, 4 * 60 * 1000);
 
 // ============================================================
 // ✅ FORM ELEMENTS
@@ -847,7 +851,15 @@ form.addEventListener("submit", async function (e) {
     showPopup("✅ Booking confirmed! Check your email for confirmation.", "success");
     form.reset();
   } else {
-    showPopup("⚠️ Could not reach server. Please contact us on WhatsApp.", "error");
+    // Backend unreachable — fall back to EmailJS so emails still go out
+    try {
+      await sendEmails(data);
+      showPopup("✅ Enquiry received! Confirmation email sent.", "success");
+      form.reset();
+    } catch (emailErr) {
+      console.error("EmailJS fallback failed:", emailErr);
+      showPopup("⚠️ Could not send. Please contact us on WhatsApp.", "error");
+    }
   }
 
   // Reset button
