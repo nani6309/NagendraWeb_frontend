@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MasterWeb — New Lead Alert</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      .email-wrapper { padding: 12px !important; }
+      .card          { border-radius: 16px !important; padding: 24px 18px !important; }
+      .hero-title    { font-size: 20px !important; }
+      .two-col td    { display: block !important; width: 100% !important; box-sizing: border-box !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#0a0a0a;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0a0a0a;">
+    <tr>
+      <td class="email-wrapper" style="padding:32px 16px;">
+
+        <!-- ── CARD ── -->
+        <table role="presentation" class="card" width="100%" cellpadding="0" cellspacing="0"
+          style="max-width:580px;margin:0 auto;background:#111111;border-radius:24px;overflow:hidden;border:1px solid #1f1f1f;box-shadow:0 25px 60px rgba(255,65,108,0.15);">
+
+          <!-- GRADIENT HEADER -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#1a0a0a 0%,#2d0f0f 40%,#1a0a14 100%);padding:32px 36px 28px;border-bottom:1px solid #ff4b2b33;">
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="vertical-align:middle;">
+                    <!-- Logo -->
+                    <img src="https://masterrweb.vercel.app/logo1.jpeg"
+                         alt="MasterWeb" width="48" height="48"
+                         style="border-radius:10px;object-fit:contain;display:block;" />
+                  </td>
+                  <td style="vertical-align:middle;padding-left:16px;">
+                    <p style="margin:0;font-size:11px;font-weight:700;color:#ff4b2b;letter-spacing:2px;text-transform:uppercase;">New Lead Alert</p>
+                    <h1 class="hero-title" style="margin:4px 0 0;font-size:22px;font-weight:800;color:#ffffff;letter-spacing:-0.5px;">
+                      🔥 Someone wants a website!
+                    </h1>
+                  </td>
+                  <!-- Badge -->
+                  <td style="vertical-align:middle;text-align:right;">
+                    <div style="display:inline-block;padding:6px 14px;background:linear-gradient(135deg,#ff4b2b,#ff416c);border-radius:999px;font-size:11px;font-weight:800;color:#fff;white-space:nowrap;">
+                      ACT NOW
+                    </div>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <!-- BODY -->
+          <tr>
+            <td style="padding:32px 36px 28px;">
+
+              <p style="margin:0 0 24px;font-size:14px;color:#a1a1aa;line-height:1.6;">
+                A new booking was just submitted on <strong style="color:#ff4b2b;">MasterWeb</strong>. 
+                Contact this lead ASAP — fast follow-up = closed deal. 💰
+              </p>
+
+              <!-- ── LEAD DETAILS ── -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                style="background:#181818;border-radius:16px;border:1px solid #2a2a2a;overflow:hidden;margin-bottom:24px;">
+
+                <!-- Header row -->
+                <tr style="background:linear-gradient(90deg,#ff4b2b18,#ff416c18);">
+                  <td colspan="2" style="padding:14px 20px;border-bottom:1px solid #2a2a2a;">
+                    <p style="margin:0;font-size:11px;font-weight:800;color:#ff4b2b;letter-spacing:1.5px;text-transform:uppercase;">
+                      Lead Details
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Name -->
+                <tr>
+                  <td style="padding:14px 20px;width:38%;font-size:11px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #1f1f1f;vertical-align:top;">Business</td>
+                  <td style="padding:14px 20px;font-size:15px;font-weight:700;color:#ffffff;border-bottom:1px solid #1f1f1f;">{{client_name}}</td>
+                </tr>
+
+                <!-- Business Type -->
+                <tr>
+                  <td style="padding:14px 20px;width:38%;font-size:11px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #1f1f1f;vertical-align:top;">Type</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #1f1f1f;">
+                    <span style="display:inline-block;padding:4px 14px;background:linear-gradient(135deg,#ff4b2b,#ff416c);border-radius:999px;font-size:12px;font-weight:800;color:#fff;">
+                      {{business_type}}
+                    </span>
+                  </td>
+                </tr>
+
+                <!-- Mobile — Clickable -->
+                <tr>
+                  <td style="padding:14px 20px;width:38%;font-size:11px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #1f1f1f;vertical-align:top;">📞 Mobile</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #1f1f1f;">
+                    <a href="tel:+91{{client_mobile}}"
+                       style="font-size:16px;font-weight:800;color:#4ade80;text-decoration:none;letter-spacing:0.5px;">
+                      +91 {{client_mobile}}
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Email — Clickable -->
+                <tr>
+                  <td style="padding:14px 20px;width:38%;font-size:11px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1px;border-bottom:1px solid #1f1f1f;vertical-align:top;">✉️ Email</td>
+                  <td style="padding:14px 20px;border-bottom:1px solid #1f1f1f;">
+                    <a href="mailto:{{client_email}}"
+                       style="font-size:14px;font-weight:600;color:#60a5fa;text-decoration:none;">
+                      {{client_email}}
+                    </a>
+                  </td>
+                </tr>
+
+                <!-- Location -->
+                <tr>
+                  <td style="padding:14px 20px;width:38%;font-size:11px;font-weight:700;color:#52525b;text-transform:uppercase;letter-spacing:1px;vertical-align:top;">📍 Location</td>
+                  <td style="padding:14px 20px;font-size:14px;color:#d4d4d8;font-weight:600;">{{client_location}}</td>
+                </tr>
+
+              </table>
+
+              <!-- ── QUICK ACTION BUTTONS ── -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" class="two-col" style="margin-bottom:28px;">
+                <tr>
+                  <!-- WhatsApp -->
+                  <td style="width:50%;padding-right:8px;">
+                    <a href="https://wa.me/91{{client_mobile}}?text=Hi%20{{client_name}}%2C%20I%20am%20from%20MasterWeb.%20I%20received%20your%20website%20request!"
+                       style="display:block;text-align:center;padding:14px 16px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:12px;color:#fff;font-size:14px;font-weight:700;text-decoration:none;">
+                      💬 WhatsApp Now
+                    </a>
+                  </td>
+                  <!-- Call -->
+                  <td style="width:50%;padding-left:8px;">
+                    <a href="tel:+91{{client_mobile}}"
+                       style="display:block;text-align:center;padding:14px 16px;background:linear-gradient(135deg,#3b82f6,#6366f1);border-radius:12px;color:#fff;font-size:14px;font-weight:700;text-decoration:none;">
+                      📞 Call Now
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Urgency Banner -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="background:linear-gradient(135deg,#ff4b2b18,#ff416c18);border:1px solid #ff4b2b33;border-radius:12px;padding:16px 20px;text-align:center;">
+                    <p style="margin:0;font-size:13px;color:#ff6b4a;font-weight:700;">
+                      ⚡ Respond within 10 minutes for best conversion rate!
+                    </p>
+                    <p style="margin:6px 0 0;font-size:12px;color:#71717a;">
+                      Leads that get a response within 5 min are 9x more likely to convert.
+                    </p>
+                  </td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- Divider -->
+          <tr>
+            <td style="height:1px;background:linear-gradient(90deg,transparent,#2a2a2a,transparent);"></td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="padding:20px 36px 28px;text-align:center;">
+              <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#ff4b2b;">MasterWeb — Admin Panel</p>
+              <p style="margin:0;font-size:11px;color:#3f3f46;">
+                This is an automated lead notification · 
+                <a href="https://masterrweb.vercel.app" style="color:#ff4b2b;text-decoration:none;">masterrweb.vercel.app</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /CARD -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>

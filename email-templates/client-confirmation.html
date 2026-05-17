@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MasterWeb — Booking Confirmed</title>
+  <style>
+    @media only screen and (max-width: 600px) {
+      .email-wrapper { padding: 12px !important; }
+      .card          { border-radius: 16px !important; padding: 28px 20px !important; }
+      .hero-title    { font-size: 22px !important; }
+      .detail-row td { display: block !important; width: 100% !important; }
+      .detail-label  { padding-bottom: 2px !important; }
+      .detail-value  { padding-bottom: 14px !important; }
+      .cta-btn       { display: block !important; text-align: center !important; }
+    }
+  </style>
+</head>
+<body style="margin:0;padding:0;background-color:#0d0d0d;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;">
+
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#0d0d0d;">
+    <tr>
+      <td class="email-wrapper" style="padding:32px 16px;">
+
+        <!-- ── CARD ── -->
+        <table role="presentation" class="card" width="100%" cellpadding="0" cellspacing="0"
+          style="max-width:580px;margin:0 auto;background:#161616;border-radius:24px;overflow:hidden;border:1px solid #2a2a2a;box-shadow:0 25px 60px rgba(255,75,43,0.12);">
+
+          <!-- GRADIENT HEADER -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#ff4b2b 0%,#ff416c 60%,#f97316 100%);padding:36px 36px 32px;text-align:center;">
+              <!-- Logo placeholder — replace src with your live logo URL -->
+              <img src="https://masterrweb.vercel.app/logo1.jpeg"
+                   alt="MasterWeb"
+                   width="80" height="80"
+                   style="border-radius:16px;border:3px solid rgba(255,255,255,0.25);object-fit:contain;display:block;margin:0 auto 16px;" />
+              <h1 class="hero-title"
+                  style="margin:0;color:#ffffff;font-size:26px;font-weight:800;letter-spacing:-0.5px;line-height:1.2;">
+                Booking Confirmed! 🚀
+              </h1>
+              <p style="margin:8px 0 0;color:rgba(255,255,255,0.85);font-size:14px;font-weight:500;">
+                Your website slot has been reserved
+              </p>
+            </td>
+          </tr>
+
+          <!-- BODY -->
+          <tr>
+            <td style="padding:36px 36px 28px;">
+
+              <!-- Greeting -->
+              <p style="margin:0 0 8px;font-size:18px;font-weight:700;color:#ffffff;">
+                Hi {{to_name}}, 👋
+              </p>
+              <p style="margin:0 0 28px;font-size:14px;color:#a1a1aa;line-height:1.7;">
+                Thank you for choosing <strong style="color:#ff4b2b;">MasterWeb</strong>. We've successfully received your request and our team will contact you <strong style="color:#ffffff;">within minutes</strong>.
+              </p>
+
+              <!-- Details Card -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0"
+                style="background:#1e1e1e;border-radius:16px;border:1px solid #2d2d2d;overflow:hidden;margin-bottom:28px;">
+                <tr>
+                  <td style="padding:16px 20px;border-bottom:1px solid #2d2d2d;">
+                    <p style="margin:0;font-size:11px;font-weight:700;color:#ff4b2b;letter-spacing:1.5px;text-transform:uppercase;">
+                      Your Booking Summary
+                    </p>
+                  </td>
+                </tr>
+
+                <!-- Business Name -->
+                <tr class="detail-row">
+                  <td class="detail-label" style="padding:14px 20px 4px;font-size:11px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Business Name</td>
+                </tr>
+                <tr class="detail-row">
+                  <td class="detail-value" style="padding:0 20px 14px;font-size:15px;color:#ffffff;font-weight:600;border-bottom:1px solid #262626;">{{client_name}}</td>
+                </tr>
+
+                <!-- Business Type -->
+                <tr class="detail-row">
+                  <td class="detail-label" style="padding:14px 20px 4px;font-size:11px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Business Type</td>
+                </tr>
+                <tr class="detail-row">
+                  <td class="detail-value" style="padding:0 20px 14px;font-size:15px;font-weight:600;border-bottom:1px solid #262626;">
+                    <span style="display:inline-block;padding:4px 12px;background:linear-gradient(135deg,#ff4b2b22,#ff416c22);border:1px solid #ff4b2b55;border-radius:999px;color:#ff6b4a;font-size:13px;">
+                      {{business_type}}
+                    </span>
+                  </td>
+                </tr>
+
+                <!-- Mobile -->
+                <tr class="detail-row">
+                  <td class="detail-label" style="padding:14px 20px 4px;font-size:11px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Mobile</td>
+                </tr>
+                <tr class="detail-row">
+                  <td class="detail-value" style="padding:0 20px 14px;font-size:15px;color:#ffffff;font-weight:600;border-bottom:1px solid #262626;">+91 {{client_mobile}}</td>
+                </tr>
+
+                <!-- Location -->
+                <tr class="detail-row">
+                  <td class="detail-label" style="padding:14px 20px 4px;font-size:11px;color:#71717a;font-weight:600;text-transform:uppercase;letter-spacing:1px;">Location</td>
+                </tr>
+                <tr class="detail-row">
+                  <td class="detail-value" style="padding:0 20px 14px;font-size:15px;color:#ffffff;font-weight:600;">{{client_location}}</td>
+                </tr>
+              </table>
+
+              <!-- Timeline Steps -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:32px;">
+                <tr>
+                  <td style="padding-bottom:16px;">
+                    <p style="margin:0;font-size:12px;font-weight:700;color:#ff4b2b;letter-spacing:1.5px;text-transform:uppercase;">What Happens Next</p>
+                  </td>
+                </tr>
+                <!-- Step 1 -->
+                <tr>
+                  <td style="padding:0 0 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:36px;vertical-align:top;padding-top:2px;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#ff4b2b,#ff416c);border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:800;color:#fff;">1</div>
+                        </td>
+                        <td style="padding-left:12px;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#ffffff;">We'll call you within minutes</p>
+                          <p style="margin:2px 0 0;font-size:12px;color:#71717a;">Our team will reach out on your mobile number</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Step 2 -->
+                <tr>
+                  <td style="padding:0 0 12px;">
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:36px;vertical-align:top;padding-top:2px;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#ff4b2b,#ff416c);border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:800;color:#fff;">2</div>
+                        </td>
+                        <td style="padding-left:12px;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#ffffff;">Discuss your requirements</p>
+                          <p style="margin:2px 0 0;font-size:12px;color:#71717a;">Share your vision, design preferences and content</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+                <!-- Step 3 -->
+                <tr>
+                  <td>
+                    <table role="presentation" cellpadding="0" cellspacing="0">
+                      <tr>
+                        <td style="width:36px;vertical-align:top;padding-top:2px;">
+                          <div style="width:28px;height:28px;background:linear-gradient(135deg,#ff4b2b,#ff416c);border-radius:50%;text-align:center;line-height:28px;font-size:12px;font-weight:800;color:#fff;">3</div>
+                        </td>
+                        <td style="padding-left:12px;">
+                          <p style="margin:0;font-size:14px;font-weight:700;color:#ffffff;">Website live in 2–3 days 🚀</p>
+                          <p style="margin:2px 0 0;font-size:12px;color:#71717a;">Fully tested, mobile-friendly and ready to grow</p>
+                        </td>
+                      </tr>
+                    </table>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA Button -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="margin-bottom:28px;">
+                <tr>
+                  <td style="text-align:center;">
+                    <a class="cta-btn" href="https://wa.me/+917095880269?text=Hi%20I%20just%20booked%20a%20slot%20on%20MasterWeb"
+                      style="display:inline-block;padding:14px 36px;background:linear-gradient(135deg,#25D366,#128C7E);border-radius:50px;color:#ffffff;font-size:15px;font-weight:700;text-decoration:none;letter-spacing:0.2px;">
+                      💬 Chat on WhatsApp
+                    </a>
+                  </td>
+                </tr>
+              </table>
+
+              <!-- Divider -->
+              <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td style="height:1px;background:linear-gradient(90deg,transparent,#2d2d2d,transparent);"></td>
+                </tr>
+              </table>
+
+            </td>
+          </tr>
+
+          <!-- FOOTER -->
+          <tr>
+            <td style="padding:24px 36px 32px;text-align:center;">
+              <p style="margin:0 0 4px;font-size:13px;font-weight:700;color:#ff4b2b;">MasterWeb</p>
+              <p style="margin:0 0 16px;font-size:12px;color:#52525b;">Building businesses online, one website at a time.</p>
+              <p style="margin:0;font-size:11px;color:#3f3f46;">
+                © 2026 MasterWeb · All rights reserved<br/>
+                <a href="https://masterrweb.vercel.app" style="color:#ff4b2b;text-decoration:none;">masterrweb.vercel.app</a>
+              </p>
+            </td>
+          </tr>
+
+        </table>
+        <!-- /CARD -->
+
+      </td>
+    </tr>
+  </table>
+
+</body>
+</html>
