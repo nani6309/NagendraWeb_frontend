@@ -704,7 +704,7 @@ function setServerStatus(state) {
   const maxAttempts = 5;
   async function ping() {
     try {
-      await fetch(`${BACKEND_URL}/api/leads`, { method: "GET", signal: AbortSignal.timeout(15000) });
+      await fetch(`${BACKEND_URL}/api/health`, { method: "GET", mode: "no-cors", signal: AbortSignal.timeout(15000) });
       setServerStatus("ready");
     } catch {
       attempts++;
@@ -845,7 +845,7 @@ form.addEventListener("submit", async function (e) {
 
   // ── Step 2: Send confirmation emails via EmailJS ──
   // Emails send even if backend had issues, as long as EmailJS is configured
-  if (EMAILJS_PUBLIC_KEY !== "YOUR_PUBLIC_KEY") {
+  if (EMAILJS_PUBLIC_KEY !== "5vI4yRb160ft_nXYu") {
     try {
       const { clientOk, adminOk } = await sendEmails(data);
       emailSent = clientOk; // at minimum the client got their email
